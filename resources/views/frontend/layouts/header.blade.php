@@ -43,7 +43,7 @@
             <div class="container topbar bg-primary d-none d-lg-block">
                 <div class="d-flex justify-content-between">
                     <div class="top-info ps-2">
-                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
+                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Uttara-4, Dhaka-1230</a></small>
                         <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
                     </div>
                     <div class="top-link pe-2">
@@ -68,9 +68,9 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                     <a href="{{url('/cart')}}" class="dropdown-item">Cart</a>
-                                    <!-- <a href="chackout.html" class="dropdown-item">Chackout</a> -->
+                                  
                                     <a href="{{url('/testimonial')}}" class="dropdown-item">Testimonial</a>
-                                    <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
+                                   
                                 </div>
                             </div>
                             <a href="{{url('/contact')}}" class="nav-item nav-link">Contact</a>
