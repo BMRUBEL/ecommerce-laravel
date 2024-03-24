@@ -14,6 +14,12 @@
        </a>
      </li>
 
+     <li>
+       <a href="{{route('featur.index')}}">
+         <i class="zmdi zmdi-view-dashboard"></i> <span>Featur Status</span>
+       </a>
+     </li>
+
     
      <li>
        <a href="profile.html">
