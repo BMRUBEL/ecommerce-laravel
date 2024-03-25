@@ -31,8 +31,16 @@ class FeaturController extends Controller
      */
     public function store(Request $request)
     {
+
+        $data = $request->all();
+        $fruits = time() . '_' . $request->file('fruits')->getClientOriginalName();
+        $request->fruits->move(public_path('fruits/'), $fruits);
+        $data['fruits'] = $fruits;
+        $vegetable = time() . '_' . $request->file('vegetable')->getClientOriginalName();
+        $request->vegetable->move(public_path('vegetable/'), $vegetable);
+        $data['vegetable'] = $vegetable;
         
-        Featur::create($request->all());
+        Featur::create($data);
         return redirect()->route('featur.index')->with('msg','Featur Create Sussfully');
     }
 

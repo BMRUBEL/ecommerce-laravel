@@ -15,19 +15,19 @@
 
                 </div> -->
            <hr>
-            <form action="{{route('featur.store')}}" method="POST">
+            <form action="{{route('featur.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
         <div class="row">
           <div class="col-lg-6">
            <div class="form-group">
             <label for="input-1">Fruits</label>
-            <input type="text" class="form-control form-control-rounded" name="fruits" placeholder="Enter your Fruits name">
+            <input type="file" class="form-control form-control-rounded" name="fruits" width="50" height="50" placeholder="Enter your Fruits name">
            </div>
            </div>
           <div class="col-lg-6">
            <div class="form-group">
             <label for="input-1">Vegetable</label>
-            <input type="text" class="form-control form-control-rounded" id="input-1" name="vegetable" placeholder="Enter Your vegetable name">
+            <input type="file" class="form-control form-control-rounded" id="input-1" name="vegetable" width="50" height="50" placeholder="Enter Your vegetable name">
            </div>
            </div>
          </div>
@@ -59,8 +59,8 @@
                   @foreach ($list as $k => $l)
                     <tr>
                      <td>{{$k + 1}}</td>
-                     <td>{{$l->fruits}}</td>
-                     <td>{{$l->vegetable}}</td>
+                     <td><img src="/fruits/{{$l->fruits}}" width="100" height="80" alt=""></td>
+                     <td><img src="/vegetable/{{$l->vegetable}}" width="100" height="80" alt=""></td>
                      <td>
                      <form action="{{ route('featur.destroy',$l->id) }}" method="POST">
                          <a class="btn btn-primary" href="{{ route('featur.edit',$l->id) }}"><i class="fa fa-edit"></i></a>
