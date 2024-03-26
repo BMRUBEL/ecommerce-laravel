@@ -4,16 +4,22 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Vegetable;
-class VegetableController extends Controller
+use App\Models\Hero;
+
+class HeroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $list = Vegetable::all();
-        return view('adminDash.vegetable.vegetable', compact('list'));
+        $list = Hero::all();
+        return view('adminDash.hero.hero', compact('list'));
+    }
+    public function heroDash()
+    {
+        $list = Hero::all();
+        return view('frontend.hero', compact('list'));
     }
 
     /**
@@ -21,8 +27,8 @@ class VegetableController extends Controller
      */
     public function create()
     {
-        $vegetable = Vegetable::all();
-        return view('adminDash.vegetable.vegetable',compact('vegetables'));
+        $hero = Hero::all();
+        return view('adminDash.hero.hero',compact(hero));
     }
 
     /**
@@ -31,14 +37,15 @@ class VegetableController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $vegetable = time() . '_' . $request->file('photo')->getClientOriginalName();
-        $request->photo->move(public_path('vegetable/'), $vegetable);
-        $data['photo'] = $vegetable;
-        Vegetable::create($data);
-        return redirect()->route('vegetable.index')-with('msg','vegetable Created Successfully');
+        $fruits = time() . '_' . $request->file('fruits')->getClientOriginalName();
+        $request->fruits->move(public_path('fruits/'), $fruits);
+        $data['fruits'] = $fruits;
+        $vegetable = time() . '_' . $request->file('vegetable')->getClientOriginalName();
+        $request->vegetable->move(public_path('vegetable/'), $vegetable);
+        $data['vegetable'] = $vegetable;
         
-        // Vegetable::create($data);
-        // return redirect()->route('vegetable.index')->with('msg','Vegetable Created Sussfully');
+        Hero::create($data);
+        return redirect()->route('featur.index')->with('msg','Hero Create Sussfully');
     }
 
     /**
@@ -70,7 +77,7 @@ class VegetableController extends Controller
      */
     public function destroy(string $id)
     {
-        Vegetable::find($id)->delete();
-        return redirect()->route('vegetable.index');
+        Hero::find($id)->delete();
+        return redirect()->route('hero.index');
     }
 }

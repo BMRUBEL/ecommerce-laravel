@@ -15,8 +15,18 @@
      </li>
 
      <li>
+       <a href="{{route('hero.index')}}">
+         <i class="zmdi zmdi-view-dashboard"></i> <span>Hero Status</span>
+       </a>
+     </li>
+     <li>
        <a href="{{route('featur.index')}}">
          <i class="zmdi zmdi-view-dashboard"></i> <span>Featur Status</span>
+       </a>
+     </li>
+     <li>
+       <a href="{{route('vegetable.index')}}">
+         <i class="zmdi zmdi-view-dashboard"></i> <span>Vegetable Status</span>
        </a>
      </li>
 

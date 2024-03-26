@@ -40,3 +40,5 @@ Route::get('/shop-details',[ShopDetailsController::class,'index']);
 Route::get('/cart',[CardController::class,'index']);
 Route::get('/testimonial',[TestimonialController::class,'index']);
 Route::get('/contact',[ContactController::class,'index']);
+
+

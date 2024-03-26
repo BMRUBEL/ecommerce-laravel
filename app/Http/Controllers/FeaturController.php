@@ -16,10 +16,10 @@ class FeaturController extends Controller
         $list = Featur::all();
         return view('adminDash.featur.featur', compact('list'));
     }
-    public function featurDash()
+    public function heroDash()
     {
         $list = Featur::all();
-        return view('frontend.featurs', compact('list'));
+        return view('frontend.hero', compact('list'));
     }
 
     /**
@@ -36,9 +36,12 @@ class FeaturController extends Controller
      */
     public function store(Request $request)
     {
-     
-         Featur::create($request->all());
-        return redirect()->route('featur.index')->with('msg','Featur Sussfully Created');
+
+        $data = $request->all();
+       
+        
+        Featur::create($data);
+        return redirect()->route('featur.index')->with('msg','Featur Create Sussfully');
     }
 
     /**
