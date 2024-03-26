@@ -20,6 +20,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="border border-primary rounded position-relative vesitable-item"
           
             >
@@ -36,6 +37,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="border border-primary rounded position-relative vesitable-item">
                 <div class="vesitable-img">
                     <img src="{{asset('frontend/img/vegetable-item-3.png')}}" class="img-fluid w-100 rounded-top bg-light" alt="">
