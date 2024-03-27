@@ -19,7 +19,7 @@
 
         <!-- Libraries Stylesheet -->
         <link href="{{asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <!-- <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet"> -->
 
 
         <!-- Customized Bootstrap Stylesheet -->

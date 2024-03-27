@@ -70,7 +70,7 @@
 
 
         <!-- Vesitable Shop Start-->
-       @include('frontend.vegetable',['list' => $list])
+       @include('frontend.vegetable')
         <!-- Vesitable Shop End -->
 
 
