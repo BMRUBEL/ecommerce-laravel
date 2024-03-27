@@ -32,10 +32,10 @@
                     </div>
                     <div class="col-md-12 col-lg-5">
                         <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
-                           
+                       
                             <div class="carousel-inner" role="listbox">
                             @foreach ($list as $key=>$l)
-                                <div class="carousel-item active rounded">
+                                <div class="carousel-item{{ $key === 0 ? ' active' : '' }} rounded">
                                     <img src="/fruits/{{$l->fruits}}" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
                                     <a href="{{url('/shop')}}" class="btn px-4 py-2 text-white rounded">Fruites</a>
                                 </div>
@@ -44,6 +44,7 @@
                                     <img src="/vegetable/{{$l->vegetable}}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                     <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
                                 </div>
+                               
                             </div>
                             @endforeach
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">

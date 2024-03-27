@@ -15,6 +15,11 @@ class VegetableController extends Controller
         $list = Vegetable::all();
         return view('adminDash.vegetable.vegetable', compact('list'));
     }
+    public function vegeDash()
+    {
+        $list = Vegetable::all();
+        return view('frontend.vegetable', compact('list'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,8 +39,9 @@ class VegetableController extends Controller
         $vegetable = time() . '_' . $request->file('photo')->getClientOriginalName();
         $request->photo->move(public_path('vegetable/'), $vegetable);
         $data['photo'] = $vegetable;
+        
         Vegetable::create($data);
-        return redirect()->route('vegetable.index')-with('msg','vegetable Created Successfully');
+        return redirect()->route('vegetable.index')->with('msg','vegetable Created Successfully');
         
         // Vegetable::create($data);
         // return redirect()->route('vegetable.index')->with('msg','Vegetable Created Sussfully');

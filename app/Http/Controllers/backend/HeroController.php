@@ -45,7 +45,7 @@ class HeroController extends Controller
         $data['vegetable'] = $vegetable;
         
         Hero::create($data);
-        return redirect()->route('featur.index')->with('msg','Hero Create Sussfully');
+        return redirect()->route('hero.index')->with('msg','Hero Create Sussfully');
     }
 
     /**
