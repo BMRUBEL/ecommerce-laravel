@@ -29,6 +29,11 @@
          <i class="zmdi zmdi-view-dashboard"></i> <span>Vegetable Status</span>
        </a>
      </li>
+     <li>
+       <a href="{{route('cont.index')}}">
+         <i class="zmdi zmdi-view-dashboard"></i> <span>Contact Status</span>
+       </a>
+     </li>
 
     
      <li>

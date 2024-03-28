@@ -77,12 +77,24 @@
                      <td>{{$l->title}}</td>
                      <td>{{$l->descript}}</td>
                      <td>
-                     <form action="{{ route('featur.destroy',$l->id) }}" method="POST">
+                 <form  action="{{ route('featur.destroy',$l->id) }}" method="POST">
                          <a class="btn btn-primary" href="{{ route('featur.edit',$l->id) }}"><i class="fa fa-edit"></i></a>
                         @csrf
                         @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    <button type="submit" class="btn btn-danger" onclick="confirmDelete({{ $l->id }})"><i class="fa fa-trash"></i></button>
                  </form>
+                 <script>
+           function confirmDelete(id) {
+               if (confirm("Are you sure you want to delete this item?")) {
+            // If user confirms deletion, submit the form
+            document.getElementById('deleteForm_' + id).submit();
+             } else {
+            // If user cancels deletion, do nothing
+             event.preventDefault();
+             }
+          }
+      </script>
+           
                      </td>
                     </tr>
                    @endforeach

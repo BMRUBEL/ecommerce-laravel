@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Hero;
 use App\Models\Featur;
 use App\Models\Vegetable;
+use App\Models\Contact;
 
 class HomeController extends Controller
 {
@@ -15,8 +16,9 @@ class HomeController extends Controller
             $list = Hero::all();
             $featur = Featur::all();
             $vege = Vegetable::all();
+            $cont = Contact::all();
 
-            return view('frontend.index', compact('list','featur','vege'));
+            return view('frontend.index', compact('list','featur','vege','cont'));
         }
 
      

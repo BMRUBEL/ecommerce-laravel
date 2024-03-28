@@ -41,7 +41,7 @@ class VegetableController extends Controller
         $data['photo'] = $vegetable;
         
         Vegetable::create($data);
-        return redirect()->route('vegetable.index')->with('msg','vegetable Created Successfully');
+        return redirect()->route('vegetabless.index')->with('msg','vegetable Created Successfully');
         
         // Vegetable::create($data);
         // return redirect()->route('vegetable.index')->with('msg','Vegetable Created Sussfully');

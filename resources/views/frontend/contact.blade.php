@@ -52,15 +52,39 @@
                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <div class="col-lg-7">
-                            <form action="" class="">
-                                <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name">
-                                <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email">
-                                <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
+                        <div class="col-lg-12">
+                        <div class="card-header">
+                <h2 class="m-0"></h2>
+                @if ($message = Session::get('msg'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                    @endif
+                </div>
+            
+              <h3 class="card-title"></h3>
+            </div>
+                            <form action="{{route('contact.store')}}" method="POST">
+                                @csrf
+                                   <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" name="name" placeholder="Your Full Name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" name="phone" placeholder="Your phone number">
+                                            </div>
+                                        </div>
+                                   </div>
+                                 
+                                <input type="email" class="w-100 form-control border-0 py-3 mb-4" name="email" placeholder="Enter Your Email">
+                                <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" name="msg" placeholder="Your Message"></textarea>
                                 <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
                             </form>
                         </div>
-                        <div class="col-lg-5">
+                        <!-- <div class="col-lg-5">
                             <div class="d-flex p-4 rounded mb-4 bg-white">
                                 <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                                 <div>
@@ -82,7 +106,7 @@
                                     <p class="mb-2">(+012) 3456 7890</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

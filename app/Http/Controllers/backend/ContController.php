@@ -1,31 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
-class ContactController extends Controller
+class ContController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
+    {
         {
-            return view('frontend.contact');
+            $list = Contact::all();
+            return view('adminDash.contact.contact',compact('list'));
         }
+    }
 
-        public function contactlist()
-                {
-                    $list = Contact::all();
-                    return view('adminDash.contact.contact',compact('list'));
-                }
-
-         /**
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $contact = Contact::all();
-        return view('frontend.contact',compact('contact'));
+        //
     }
 
     /**
@@ -33,8 +32,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        Contact::create($request->all());
-        return redirect()->route('contact.create')->with('msg', 'Contact Successfully Created');   
+        //
     }
 
     /**
@@ -66,6 +64,7 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        Contact::find($id)->delete();
+        return redirect()->route('cont.index');
     }
 }
